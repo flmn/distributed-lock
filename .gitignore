@@ -1,0 +1,13 @@
+.DS_Store
+build/
+out/
+bin/
+httpRequests/
+.gradle/
+.cache/
+.idea*/
+~$*
+*.iml
+*.ipr
+*.iws
+http-client.private.env.json
