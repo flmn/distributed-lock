@@ -1,18 +1,25 @@
-plugins {
-	id 'java-library'
-	id 'io.spring.dependency-management'
+jar {
+    enabled = true
+}
+
+bootJar {
+    enabled = false
 }
 
 dependencies {
-	api project(':distributed-lock-api')
-//	implementation 'org.springframework.boot:spring-boot-starter-data-redis'
-	testImplementation (
-			'org.junit.jupiter:junit-jupiter-api:5.6.2'
-	)
-	testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
+    api(
+            project(':distributed-lock-api')
+    )
+    implementation(
+            'org.springframework.boot:spring-boot-starter-data-redis'
+    )
+    testImplementation(
+            'org.junit.jupiter:junit-jupiter-api:5.6.2'
+    )
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
 }
 
 tasks.named('test') {
-	useJUnitPlatform()
+    useJUnitPlatform()
 }
 

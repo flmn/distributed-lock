@@ -1,18 +1,13 @@
 plugins {
-    id 'org.springframework.boot' version '2.4.0' apply false
+    id 'base'
+    id 'org.springframework.boot' version '2.4.0'
     id 'io.spring.dependency-management' version '1.0.10.RELEASE'
 }
 
 allprojects {
-    buildscript {
-        dependencyManagement {
-            imports {
-                mavenBom "org.springframework.boot:spring-boot-starter-parent:${springBootVersion}"
-            }
-        }
-    }
-
     apply plugin: 'java'
+    apply plugin: 'java-library'
+    apply plugin: 'org.springframework.boot'
     apply plugin: 'io.spring.dependency-management'
 
     group = 'com.github.flmn.distributedlock'
@@ -22,6 +17,12 @@ allprojects {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
         options.encoding = 'UTF-8'
+    }
+
+    gradle.projectsEvaluated {
+        tasks.withType(JavaCompile) {
+            options.compilerArgs << "-Xlint:all"
+        }
     }
 
     repositories {
