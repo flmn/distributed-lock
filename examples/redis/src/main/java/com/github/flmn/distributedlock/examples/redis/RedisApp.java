@@ -1,4 +1,4 @@
-package com.github.flmn.distributedlock.examples;
+package com.github.flmn.distributedlock.examples.redis;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

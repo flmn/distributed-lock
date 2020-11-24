@@ -6,6 +6,7 @@ import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.data.redis.core.StringRedisTemplate;
 
 @Configuration
 @ComponentScan("com.github.flmn.distributedlock.redis")
@@ -13,7 +14,7 @@ import org.springframework.context.annotation.Configuration;
 public class RedisDistributedLockAutoConfiguration {
 
     @Bean
-    public DistributedLock distributedLock() {
-        return new RedisDistributedLock();
+    public DistributedLock distributedLock(StringRedisTemplate redisTemplate) {
+        return new RedisDistributedLock(redisTemplate);
     }
 }

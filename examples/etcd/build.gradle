@@ -1,0 +1,10 @@
+plugins {
+	id 'org.springframework.boot'
+}
+
+dependencies {
+	implementation "io.etcd:jetcd-core:${jetcdVersion}"
+
+	implementation project(':distributed-lock-etcd')
+}
+

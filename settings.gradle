@@ -1,7 +1,11 @@
 rootProject.name = 'distributed-lock'
 
 include "distributed-lock-api"
+include "distributed-lock-etcd"
+include "distributed-lock-mysql"
 include "distributed-lock-redis"
 
 // examples
+include "examples:etcd"
+include "examples:mysql"
 include "examples:redis"

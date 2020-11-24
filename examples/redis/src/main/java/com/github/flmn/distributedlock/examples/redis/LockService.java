@@ -1,4 +1,4 @@
-package com.github.flmn.distributedlock.examples.service;
+package com.github.flmn.distributedlock.examples.redis.service;
 
 import com.github.flmn.distributedlock.api.DistributedLock;
 import org.springframework.stereotype.Service;
